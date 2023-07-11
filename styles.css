@@ -1,0 +1,947 @@
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('RobotoSlab-Regular.ttf') format('truetype');
+  font-display: swap; /* This is the key property */
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Alex Brush', cursive;
+}
+
+:root {
+    --swiper-theme-color: #000 !important;
+}
+
+.contain {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+
+
+
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    content: none !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: fixed !important;
+    width: 8vw !important;
+    height: 3vw !important;
+    background: rgba(223, 221, 218, 0.6) !important;
+    color: inherit !important;
+    font-family: 'Roboto Slab', serif !important;
+    font-size: 1.1vw !important;
+    border-radius: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    backdrop-filter: blur(7px) !important;
+    transition: transform 0.3s ease, background 0.3s ease !important;
+}
+
+.swiper-button-next {
+    right: 20px !important;
+    top: auto !important;
+    bottom: 50px !important;
+}
+
+.swiper-button-prev {
+    left: 20px !important;
+    top: auto !important;
+    bottom: 50px !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transform: scale(0.95);
+    background: rgba(223, 221, 218, 1) !important;
+}
+
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#page1 .slide-content {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#page2 .slide-content {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#page3 .slide-content {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#page4 .slide-content {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* BACKGROUNDS */
+
+#page1 {
+    background-image: url(/images/page-1_background.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#page2 {
+    background-image: url(/images/page-2_background.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#page3 {
+    background-image: url(/images/page-3_background.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#page4 {
+    background-image: url(/images/page-4_background.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* PAGE 1 */
+
+#page1 header {
+    top: 0;
+    text-align: center;
+    width: 100%;
+}
+
+#page1 h1 {
+    font-weight: 400;
+    font-size: 8vw;
+    margin-bottom: 20px;
+    margin-top: 1.5vw;
+}
+
+#page1 h2 {
+    font-size: 5vh;
+    margin-top: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+#page1 .timer {
+    margin-top: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#page1 .timer-card {
+    background: rgba(223, 221, 218, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 20px;
+    margin: 0 10px;
+    padding: 10px;
+    backdrop-filter: blur(7px);
+}
+
+#page1 .timer-card span {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5vw;
+    margin-bottom: 5px;
+}
+
+#page1 .timer-card p {
+    font-size: 1.5vw;
+    font-family: 'Roboto Slab', serif;
+    margin: 0;
+}
+
+/* PAGE 2 */
+
+#page2 h1 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    font-size: 5vw;
+    margin-bottom: 20px;
+    margin-top: 1.5vw;
+}
+
+#page2 .survey {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#page2 .survey-card {
+    background: rgba(223, 221, 218, 0.6);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: left;
+    margin-bottom: 15px;
+    backdrop-filter: blur(7px);
+}
+
+#page2 h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5vw;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#page2 label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.2vw;
+}
+
+#page2 input[type="checkbox"] {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    background-color: #f3f3f3;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#page2 input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#page2 input[type="checkbox"]:checked {
+    background-color: #b8860b;
+    border-color: #b8860b;
+}
+
+#page2 input[type="checkbox"]:checked::after {
+    content: none;
+}
+
+#page2 .hidden {
+    display: none;
+}
+
+#page2 .error {
+    border: 1px solid red !important;
+}
+
+#page2 .error-message {
+    color: red;
+    font-size: 1em;
+}
+
+textarea:focus {
+    outline: none;
+    border: 2px solid rgb(113, 113, 113);
+    /* Замените на нужный цвет */
+}
+
+#page2 .suboptions {
+    margin-left: 20px;
+}
+
+#page2 .comment-button-container {
+    margin-bottom: 60px;
+    margin-top: 20px;
+}
+
+#page2 .comment-button {
+    padding: 2vh;
+    border: none;
+    cursor: pointer;
+    background: rgba(223, 221, 218, 0.6);
+    color: inherit;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.1vw;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(7px);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#page2 .comment-button:hover {
+    transform: scale(0.95);
+    background: rgba(223, 221, 218, 1);
+}
+
+#page2 .modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+#page2 .modal-content {
+    font-family: 'Roboto Slab', serif;
+    background-color: rgba(223, 221, 218, 0.8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 20px;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+#page2 .modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+#page2 .close {
+    color: #fafafa;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    font-size: 40px;
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    background: transparent;
+    border: none;
+    transition: color 0.3s ease;
+}
+
+#page2 .close:hover {
+    color: #888;
+    /* меняем цвет текста при наведении */
+}
+
+#page2 .modal p {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    font-size: 2.5vw;
+    margin-bottom: 20px;
+}
+
+#page2 .textarea {
+    font-family: 'Roboto Slab', serif;
+    width: 90%;
+    /* Занимает 90% ширины родительского элемента */
+    padding: 15px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    /* Благодаря этому свойству padding не добавляет дополнительную ширину к элементу */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    /* Пользователь не сможет изменять размер текстового поля */
+}
+
+#page2 .button {
+    font-family: 'Roboto Slab', serif;
+    width: 40%;
+    background: rgba(223, 221, 218, 0.8);
+    color: inherit;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1vw;
+    backdrop-filter: blur(7px);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#page2 .button:hover {
+    transform: scale(0.95);
+    background: rgba(223, 221, 218, 1);
+}
+
+
+
+
+/* PAGE 3 */
+
+#page3 h1 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    font-size: 5vw;
+    margin-bottom: 20px;
+    margin-top: 1.5vw;
+}
+
+#page3 p {
+    font-size: 2vw;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+}
+
+#page3 .circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 2vw auto;
+}
+
+#page3 .circle {
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    margin: 0 1vw;
+    /* добавляем отступы по бокам */
+}
+
+#page3 .circle-1 {
+    background-color: #2e6540;
+}
+
+#page3 .circle-2 {
+    background-color: #727372;
+}
+
+#page3 .circle-3 {
+    background-color: #DFDDDA;
+}
+
+#page3 .circle-4 {
+    background-color: #867B6D;
+}
+
+#page3 .circle-5 {
+    background-color: #B29457;
+}
+
+/* PAGE 4 */
+
+#page4 h1 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    font-size: 5vw;
+    margin-bottom: 20px;
+    margin-top: 1.5vw;
+}
+
+#page4 .wedding-program-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5%;
+    justify-content: center;
+    align-items: start;
+    padding: 2vh;
+    width: 100%;
+    max-width: 50%;
+    margin: 0 auto;
+    font-family: 'Roboto Slab', serif;
+}
+
+#page4 .program-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(223, 221, 218, 0.6);
+    backdrop-filter: blur(7px);
+    transition: transform 0.3s ease;
+}
+
+
+#page4 .program-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(223, 221, 218, 0.8);
+}
+
+
+#page4 .program-number {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#page4 .program-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+#page4 .program-description {
+    font-size: 0.85em;
+    text-align: justify;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    #page1 h1 {
+        font-size: 10vw;
+    }
+
+    #page1 h2 {
+        font-size: 7vh;
+    }
+
+    #page1 .timer {
+        margin-top: 5vw;
+    }
+
+    #page1 .timer-card {
+        width: 9vw;
+        height: 9vw;
+    }
+
+    #page1 .timer-card span {
+        font-size: 3.5vw;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 12vw !important;
+        height: 5vw !important;
+        font-size: 2.1vw !important;
+    }
+
+    /* Page 2 */
+
+    .slide-content {
+        width: 100%;
+    }
+
+    #page2 h3 {
+        font-size: 2.5vw;
+    }
+
+    #page2 label {
+        font-size: 2vw;
+    }
+
+    #page2 .comment-button {
+        padding: 2.5vh;
+        font-size: 1.7vw;
+    }
+
+    #page2 .button {
+        font-size: 1.8vw;
+    }
+
+
+    /* End Page2 */
+
+
+
+}
+
+@media screen and (max-width: 992px) {
+    #page1 h2 {
+        font-size: 6vh;
+    }
+
+    #page1 .timer-card {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 12vw !important;
+        height: 5vw !important;
+        font-size: 2.1vw !important;
+    }
+
+    #page2 h1 {
+        margin-top: 1.5vw;
+    }
+
+    #page3 h1 {
+        font-size: 10vw;
+        margin-bottom: 20px;
+        margin-top: 5vw;
+    }
+
+
+
+    /* Page4 */
+
+    #page4 h1 {
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+
+
+
+    #page4 .program-item {
+        flex-basis: 33%;
+    }
+
+    #page4 .program-number {
+        font-size: 1.5em;
+    }
+
+    #page4 .wedding-program-container {
+        grid-template-columns: 1fr;
+        overflow-y: scroll;
+        grid-gap: 2%;
+        padding: 3vh;
+        max-width: 90%;
+        max-height: 68%;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    #page1 h1 {
+        margin-top: 15vw;
+    }
+
+    #page1 h2 {
+        font-size: 8vh;
+        margin-top: 20px;
+
+    }
+
+    #page1 .timer-card {
+        width: 12vw;
+        height: 12vw;
+    }
+
+    #page1 .timer {
+        margin-top: 0.5vw;
+    }
+
+    #page1 .timer-card span {
+        font-size: 5.5vw;
+    }
+
+    #page1 .timer-card p {
+        font-size: 2vw;
+    }
+
+    #page1 .swiper-button-next,
+    #page1 .swiper-button-prev {
+        width: 13vw !important;
+        height: 6.5vw !important;
+        font-size: 2.5vw !important;
+
+    }
+
+
+    /* Page2 */
+
+    #page2 h1 {
+        margin-bottom: 25px;
+        margin-top: 3vw;
+        font-size: 7vw;
+    }
+
+    #page2 h3 {
+        font-size: 2.5vw;
+    }
+
+    #page2 label {
+        font-size: 2.3vw;
+        margin-bottom: 12px;
+    }
+
+
+    #page2 .comment-button {
+        font-size: 2vw;
+    }
+
+    #page2 .button {
+        font-size: 1.8vw;
+    }
+
+    #page2 .modal-content {
+        width: 70%;
+    }
+
+    #page2 .modal p {
+        font-size: 3vw;
+    }
+
+    #page2 .swiper-button-next,
+    #page2 .swiper-button-prev {
+        width: 15vw !important;
+        height: 7vw !important;
+        font-size: 2.2vw !important;
+    }
+
+    /* Page3 */
+
+
+    #page3 h1 {
+        font-size: 10vw;
+        margin-bottom: 20px;
+        margin-top: 5vw;
+    }
+
+
+    #page3 p {
+        font-size: 3vw;
+    }
+
+    #page3 .circle-container {
+        width: 100%;
+        margin: 3vw auto;
+    }
+
+    #page3 .circle {
+        width: 10vw;
+        height: 10vw;
+        margin: 0 2vw;
+    }
+
+    #page3 .swiper-button-next,
+    #page3 .swiper-button-prev {
+        width: 13vw !important;
+        height: 6.5vw !important;
+        font-size: 2.5vw !important;
+    }
+
+    /* Page 4 */
+
+
+    #page4 .program-item {
+        flex-basis: 100%;
+    }
+
+    #page4 .swiper-button-prev {
+        width: 13vw !important;
+        height: 6.5vw !important;
+        font-size: 2.5vw !important;
+    }
+
+
+}
+
+@media screen and (max-width: 575px) {
+
+    /* Page 1 */
+    #page1 h2 {
+        font-size: 4vh;
+
+    }
+
+    #page1 .timer {
+        margin-top: 25vw;
+    }
+
+    #page1 .timer-card {
+        width: 14vw;
+        height: 16vw;
+    }
+
+    #page1 .timer-card span {
+        font-size: 6.5vw;
+        margin-bottom: 5px;
+    }
+
+
+    #page1 .swiper-button-next,
+    #page1 .swiper-button-prev {
+        width: 22vw !important;
+        height: 9vw !important;
+        font-size: 4vw !important;
+    }
+
+    /* Page 2  */
+    #page2 h3 {
+        font-size: 4vw;
+    }
+
+    #page2 .modal p {
+        font-size: 4vw;
+    }
+
+
+    #page2 .comment-button {
+        font-size: 2.8vw;
+    }
+
+    #page2 .button {
+        font-size: 3.5vw;
+        width: max-content;
+    }
+
+    #page2 .error-message {
+        color: red;
+        font-size: 0.8em;
+    }
+
+
+
+    #page2 .swiper-button-next,
+    #page2 .swiper-button-prev {
+        width: 20vw !important;
+        height: 10vw !important;
+        font-size: 3.8vw !important;
+    }
+
+    /* Page 3 */
+
+    #page3 h1 {
+        font-size: 8vw;
+    }
+
+    #page3 p {
+        font-size: 5vw;
+    }
+
+    #page3 .circle-container {
+        width: 100%;
+        margin: 4vw auto;
+    }
+
+    #page3 .circle {
+        width: 14vw;
+        height: 14vw;
+        margin: 0 2.5vw;
+    }
+
+    #page3 .swiper-button-next,
+    #page3 .swiper-button-prev {
+        width: 22vw !important;
+        height: 9vw !important;
+        font-size: 4vw !important;
+    }
+
+
+    #page4 .swiper-button-prev {
+        width: 22vw !important;
+        height: 9vw !important;
+        font-size: 4vw !important;
+    }
+
+    #page4 .wedding-program-container {
+        margin-top: 30px;
+    }
+
+    #page4 h1 {
+        font-size: 8vw;
+    }
+
+
+}
+
+@media screen and (max-width: 450px) {
+    #page2 h3 {
+        margin-top: 4vw;
+        font-size: 4vw;
+    }
+
+    #page2 .modal p {
+        font-size: 4vw;
+    }
+
+
+    #page2 .survey-card {
+        padding: 10px;
+    }
+
+    #page2 label {
+        font-size: 3vw;
+        margin-bottom: 12px;
+    }
+
+
+
+    #page2 .comment-button {
+        font-size: 2.8vw;
+    }
+
+    #page2 .button {
+        font-size: 3vw;
+        width: max-content;
+    }
+
+    #page2 .error-message {
+        color: red;
+        font-size: 0.8em;
+    }
+
+
+
+    #page2 .swiper-button-next,
+    #page2 .swiper-button-prev {
+        width: 20vw !important;
+        height: 10vw !important;
+        font-size: 3.8vw !important;
+    }
+}

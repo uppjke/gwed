@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Alex+Brush"
+      rel="stylesheet"
+    />
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Подключение библиотеки Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="scripts.js" defer></script>
+    <title>Invitation to our wedding</title>
+  </head>
+
+  <body>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div id="page1" class="swiper-slide">
+          <div class="slide-content">
+            <header>
+              <h1>Welcome to the Wedding</h1>
+              <h2>05.08.2023</h2>
+            </header>
+            <div class="timer">
+              <div class="timer-card">
+                <span class="days">0</span>
+                <p>Days</p>
+              </div>
+              <div class="timer-card">
+                <span class="hours">0</span>
+                <p>Hours</p>
+              </div>
+              <div class="timer-card">
+                <span class="minutes">0</span>
+                <p>Minutes</p>
+              </div>
+              <div class="timer-card">
+                <span class="seconds">0</span>
+                <p>Seconds</p>
+              </div>
+            </div>
+            <!-- Костыль -->
+            <div class="next-page-button navigation-button"></div>
+            <div class="next-page-button navigation-button">
+              <a class="swiper-button-next">Вперед</a>
+            </div>
+          </div>
+        </div>
+        <div id="page2" class="swiper-slide">
+          <div class="slide-content">
+            <h1>Для нас важно знать</h1>
+            <div class="survey">
+              <form action="send_comment_tg.php" method="post">
+              <div class="survey-card">
+                <h3>Что вы предпочитаете в качестве основного блюда?</h3>
+                <label>
+                  <input type="checkbox" name="food_list[]" value="Рыбу" /> Рыба
+                </label>
+                <label>
+                  <input type="checkbox" name="food_list[]" value="Мясо" /> Мясо
+                </label>
+                <label>
+                  <input type="checkbox" name="food_list[]" value="Овощи и грибы" />
+                  Овощи и грибы
+                </label>
+              </div>
+              <div class="survey-card">
+                <h3>Предпочтения по алкоголю:</h3>
+                <label>
+                  <input
+                    type="checkbox"
+                    id="champagne"
+                    name="cham[]"
+                    value="Шампанское"
+                  />
+                  Шампанское
+                </label>
+                <div id="champagne-suboptions" class="hidden suboptions">
+                  <div style="display: inline-block">
+                    <label>
+                      <input
+                        type="checkbox"
+                        id="sweet"
+                        name="cham_type[]"
+                        value="сладкое"
+                      />
+                      Сладкое
+                    </label>
+                  </div>
+                  <div style="display: inline-block">
+                    <label class="suboptions">
+                      <input
+                        type="checkbox"
+                        id="dry"
+                        name="cham_type[]"
+                        value="сухое"
+                      />
+                      Сухое
+                    </label>
+                  </div>
+                </div>
+                <label>
+                  <input
+                    type="checkbox"
+                    id="wine"
+                    name="wine[]"
+                    value="Вино"
+                  />
+                  Вино
+                </label>
+                <div id="wine-suboptions" class="hidden suboptions">
+                  <div style="display: inline-block">
+                    <label>
+                      <input
+                        type="checkbox"
+                        id="red"
+                        name="wine_color[]"
+                        value="красное"
+                      />
+                      Красное
+                    </label>
+                    <label>
+                      <input
+                        type="checkbox"
+                        id="white"
+                        name="wine_color[]"
+                        value="белое"
+                      />
+                      Белое
+                    </label>
+                  </div>
+                  <div style="display: inline-block">
+                    <label class="suboptions">
+                      <input
+                        type="checkbox"
+                        id="red-dry"
+                        name="wine_type[]"
+                        value="сухое"
+                      />
+                      Сухое
+                    </label>
+                    <label class="suboptions">
+                      <input
+                        type="checkbox"
+                        id="white-sweet"
+                        name="wine_type[]"
+                        value="сладкое"
+                      />
+                      Сладкое
+                    </label>
+                  </div>
+                </div>
+                <label>
+                  <input type="checkbox" name="spirits[]" value="Крепкий алкоголь" />
+                  Крепкий алкоголь
+                </label>
+                <label>
+                  <input type="checkbox" name="non_drink[]" value="Не буду пить" />
+                  Не буду пить алкоголь
+                </label>
+              </div>
+            </div>
+            <div class="prev-page-button navigation-button">
+              <a class="swiper-button-prev">Назад</a>
+            </div>
+            <div class="comment-button-container">
+              <button id="open-modal-btn" class="comment-button" type="button">
+                 Отправить
+              </button>
+            </div>
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                  <span id="close-modal-btn" class="close">&times;</span>
+                  <p>Вы можете добавить комментарий</p>
+                  <div id="nameError" class="hidden error-message">Введите не менее двух символов</div>
+                  <textarea
+                    id="fullnameInput"
+                    class="textarea"
+                    name="fullname"
+                    rows="1"
+                    placeholder="Введите ваше имя"
+                  ></textarea>
+                  <textarea
+                    id="commentInput"
+                    class="textarea"
+                    name="comment"
+                    rows="6"
+                    placeholder="Введите ваш комментарий"
+                  ></textarea>
+                  <button id="sendButton" type="submit" class="button">
+                    Отправить
+                  </button>
+                </div>
+            </div>
+          </form>
+            <div class="next-page-button navigation-button">
+              <a class="swiper-button-next">Вперед</a>
+            </div>
+          </div>
+        </div>
+        <div id="page3" class="swiper-slide">
+          <div class="slide-content">
+            <h1>Дресс-код</h1>
+            <p>
+              Мы будем рады, если вы используете нашу палитру цветов в своем
+              образе
+            </p>
+            <div class="circle-container">
+              <div class="circle circle-1"></div>
+              <div class="circle circle-2"></div>
+              <div class="circle circle-3"></div>
+              <div class="circle circle-4"></div>
+              <div class="circle circle-5"></div>
+            </div>
+            <div class="prev-page-button navigation-button">
+              <a class="swiper-button-prev">Назад</a>
+            </div>
+            <div class="next-page-button navigation-button">
+              <a class="swiper-button-next">Вперед</a>
+            </div>
+          </div>
+        </div>
+        <div id="page4" class="swiper-slide">
+          <div class="slide-content">
+            <h1>Программа свадебного дня</h1>
+            <div class="wedding-program-container">
+              <div class="program-item">
+                <div class="program-number">За день</div>
+                <div class="program-info">
+                  <div class="program-title">
+                    Заселение гостей и молодоженов
+                  </div>
+                  <div class="program-description">
+                    Для вашего комфорта предлагаем уютное жилье возле банкетного
+                    зала за день до торжества. Без суеты, только предвкушение
+                    праздника для наших гостей!
+                  </div>
+                </div>
+              </div>
+              <div class="program-item">
+                <div class="program-number">15:20</div>
+                <div class="program-info">
+                  <div class="program-title">Церемония в Moscow City</div>
+                  <div class="program-description">
+                    Волшебство начнется точно по расписанию, поэтому, чтобы не
+                    пропустить начало, приходите минимум за 25-30 минут до
+                    старта.
+                  </div>
+                </div>
+              </div>
+              <div class="program-item">
+                <div class="program-number">17:00</div>
+                <div class="program-info">
+                  <div class="program-title">Прогулка на лимузине</div>
+                  <div class="program-description">
+                    Банкетный зал находится в 50 минутах от Moscow City. Поэтому
+                    главное - сделать этот путь частью праздника, ведь дорога
+                    может быть такой же красивой, как и сама цель!
+                  </div>
+                </div>
+              </div>
+              <div class="program-item">
+                <div class="program-number">18:00</div>
+                <div class="program-info">
+                  <div class="program-title">
+                    Банкет в Гастробаре "Некрасов"
+                  </div>
+                  <div class="program-description">
+                    Наша ведущая встретит вас на входе и станет вашим гидом в
+                    этом свадебном приключении. Не бойтесь заблудиться, мы все
+                    предусмотрели!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="prev-page-button navigation-button">
+              <a class="swiper-button-prev">Назад</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </body>
+</html>
